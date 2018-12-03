@@ -1,5 +1,6 @@
-# paste-reactjs
-Paste code on nodejs &amp; react
+# RedmineR
+Redmine native desctop client. 
+Based on Electon
 
 # Commands
 ## yarn start
