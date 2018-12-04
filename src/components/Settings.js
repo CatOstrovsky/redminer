@@ -12,21 +12,21 @@ class Settings extends Component {
   render(){
     return (
       <div>
-        <h1>Settings RedmineR</h1>
+        <h1>Настройки программы</h1>
         <form className="ui form">
           <div className="field">
-            <label>Url to Redmine</label>
+            <label>Url к Redmine API</label>
             <input type="text" name="url" placeholder="Url to Redmine" value={this.state.url}/>
           </div>
           <div className="field">
             <label>API Token</label>
             <input type="text" name="token" placeholder="API Token" value={this.state.token}/>
           </div>
-          <button className="ui primary button" type="submit">Update</button>
+          <button className="ui primary button" type="submit">Обновить</button>
         </form>
       </div>
     );
-  } 
+  }
 
 }
 

@@ -2,7 +2,7 @@
 	"homepage": "./",
 	"name": "RedmineR",
 	"version": "0.0.1",
-	"author": "Konstantin Ostrovsky[ska@rubium.ru]",
+	"author": "Konstantin Ostrovsky[ska_live@mail.ru]",
 	"main": "src/electron-starter.js",
 	"private": true,
 	"dependencies": {

@@ -3,14 +3,14 @@ import Redmine from 'node-redmine'
 import { Redirect } from 'react-router-dom';
 
 class User extends Component {
-	
+
 	constructor() {
 		super(...arguments);
 	}
 
 	render() {
 		let user = this.props.user;
-		return( 
+		return(
 			<tr>
 				<td>{user.id}</td>
 				<td>{user.subject}</td>
@@ -48,13 +48,13 @@ class Users extends Component {
 	render(){
 		if (this.state.redirect) {
 	       return <Redirect to='/login'/>;
-	    }	
+	    }
 
 	    let usersList  = this.state.users.map((user) => {
 			return <User user={user}  key={user.id}/>
 		}),
 		usersListing = <div>
-				
+
 				<table className="ui pink table">
 				<thead>
 					<tr>
@@ -80,11 +80,11 @@ class Users extends Component {
 
 		return (
 			<div>
-			<h1>Users</h1>
+			<h1>Пользователи</h1>
 			{usersListing}
 			</div>
 		);
-	} 
+	}
 
 }
 

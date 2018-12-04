@@ -4,14 +4,14 @@ import Redmine from 'node-redmine'
 import { Redirect } from 'react-router-dom';
 
 class Project extends Component {
-	
+
 	constructor() {
 		super(...arguments);
 	}
 
 	render() {
 		let Project = this.props.project;
-		return( 
+		return(
 			<tr>
 				<td>{Project.id}</td>
 				<td>{Project.name}</td>
@@ -49,7 +49,7 @@ class Projects extends Component {
 	render(){
 		if (this.state.redirect) {
 	       return <Redirect to='/login'/>;
-	    }	
+	    }
 
 	    let projectsList  = this.state.projects.map((project) => {
 			return <Project project={project}  key={project.id}/>
@@ -61,18 +61,18 @@ class Projects extends Component {
 			    "boxShadow": "none",
 			    "border": "0px"
 			};
-			projectsList = <tr><td colspan="3"><div className="ui segment" style={loaderStyles}><div className="ui active loader"><p></p><p></p></div></div></td></tr>;
+			projectsList = <tr><td colSpan="3"><div className="ui segment" style={loaderStyles}><div className="ui active loader"><p></p><p></p></div></div></td></tr>;
 		}
 
 		return (
 			<div >
-				<h1>Projects</h1>
+				<h1>Проекты</h1>
 				<table className="ui pink table">
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Name</th>
-						<th>Status</th>
+						<th>№</th>
+						<th>Название</th>
+						<th>Статус</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -81,7 +81,7 @@ class Projects extends Component {
 				</table>
 			</div>
 		);
-	} 
+	}
 
 }
 

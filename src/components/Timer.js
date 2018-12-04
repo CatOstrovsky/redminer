@@ -4,10 +4,10 @@ class Timer extends Component {
   render(){
     return (
       <div>
-        <h1>ToDo timer...</h1>
+        <h1>Таймер в работе</h1>
       </div>
     );
-  } 
+  }
 
 }
 

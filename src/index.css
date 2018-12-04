@@ -8,7 +8,7 @@ body {
     left:  0px;
     top: 0px;
     height:  100%;
-    background: rgba(0,0,0,.95);
+    background: #1b1c1d;
     border-right:  1px #bbbbbb solid;
     width:  50px;
     padding:  0px;
@@ -28,6 +28,7 @@ body {
 div#root {
     padding-left:  60px;
     padding-top:  10px;
+    padding-right: 10px;
 }
 
 .nav-menu li {
@@ -63,6 +64,11 @@ div#root {
     margin-right:  0px;
     color: #fff;
 }
+.nav-menu li:last-child {
+  position: absolute;
+  bottom: 0px;
+  border-top: 0px;
+}
 .nav-menu li a:hover i {
   color: #fff;
 }
@@ -72,5 +78,9 @@ div#root {
     font-size: 9px;
 }
 .nav-menu li a.active {
-    background: #bf0000;
+    background: #767676;
+}
+
+h1{
+  font-size: 20px!important;
 }

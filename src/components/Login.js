@@ -8,8 +8,8 @@ class Login extends Component {
   constructor(props){
     super( props );
     this.state = {
-      'url': "https://rm.rubium.ru/",
-      'token': "189d5a971b7473cd2b13582bf4a5baa624d380eb",
+      'url': "",
+      'token': "",
       'loading': false,
       'redirect': false
     };
@@ -94,7 +94,7 @@ class Login extends Component {
         </div>
       </div>
     );
-  } 
+  }
 
 }
 

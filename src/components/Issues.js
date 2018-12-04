@@ -4,14 +4,14 @@ import Redmine from 'node-redmine'
 import { Redirect } from 'react-router-dom';
 
 class Issue extends Component {
-	
+
 	constructor() {
 		super(...arguments);
 	}
 
 	render() {
 		let issue = this.props.issue;
-		return( 
+		return(
 			<tr>
 				<td>{issue.id}</td>
 				<td>{issue.subject}</td>
@@ -34,22 +34,28 @@ class Issues extends Component {
 			apiKey: window.localStorage.getItem('token'),
 			format: 'json'
 		};
-		let redmine = new Redmine(hostname, config);
 
-		redmine.issues({limit: 20}, (err, data) => {
-	        if (err){
-	          this.setState({redirect: true});
-	        }else{
-	          this.setState({issues: data.issues});
-	        }
-	    });
+		if(!hostname) {
+			this.state.redirect = true
+		}else{
+
+			let redmine = new Redmine(hostname, config);
+
+			redmine.issues({limit: 20}, (err, data) => {
+		        if (err){
+		          this.setState({redirect: true});
+		        }else{
+		          this.setState({issues: data.issues});
+		        }
+		    });
+		}
 	}
 
 
 	render(){
 		if (this.state.redirect) {
 	       return <Redirect to='/login'/>;
-	    }	
+	    }
 
 	    let issuesList  = this.state.issues.map((issue) => {
 			return <Issue issue={issue}  key={issue.id}/>
@@ -61,18 +67,18 @@ class Issues extends Component {
 			    "boxShadow": "none",
 			    "border": "0px"
 			};
-			issuesList = <tr><td colspan="3"><div className="ui segment" style={loaderStyles}><div className="ui active loader"><p></p><p></p></div></div></td></tr>;
+			issuesList = <tr><td colSpan="3"><div className="ui segment" style={loaderStyles}><div className="ui active loader"><p></p><p></p></div></div></td></tr>;
 		}
 
 		return (
 			<div>
-				<h1>Issues</h1>
+				<h1>Задачи</h1>
 				<table className="ui pink table">
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Subject</th>
-						<th>Status</th>
+						<th>№</th>
+						<th>Тема</th>
+						<th>Статус</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -81,7 +87,7 @@ class Issues extends Component {
 				</table>
 			</div>
 		);
-	} 
+	}
 
 }
 
