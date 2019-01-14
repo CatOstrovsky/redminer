@@ -2,7 +2,7 @@
 
 ### В связи с отсутствием потенциала данного проекта - разработка была остановлена. Если Вы имеете идеи по доработке или пожелания - свяжитесь со мной. 
 
-Redmine native desctop client. 
+Redmine native desktop client. 
 Based on Electon
 
 # Commands
